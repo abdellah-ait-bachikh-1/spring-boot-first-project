@@ -1,6 +1,7 @@
 package com.abdellah.demo.model;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -24,9 +25,9 @@ public class User {
     private String email;
     private String password;
     @Column(name = "created_at")
-    private LocalTime createdAt;
+    private LocalDateTime createdAt;
     @Column(name = "updated_at")
-    private LocalTime updatedAt;
+    private LocalDateTime updatedAt;
 
     public User() {
 
@@ -34,13 +35,13 @@ public class User {
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = LocalTime.now();
-        this.updatedAt = LocalTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.updatedAt = LocalTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public UUID getId() {
@@ -59,11 +60,11 @@ public class User {
         return this.email;
     }
 
-    public LocalTime getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public LocalTime getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
 
         return this.updatedAt;
     }
@@ -76,11 +77,11 @@ public class User {
         this.email = email;
     }
 
-    public void setCreatedAt(LocalTime createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt(LocalTime updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
