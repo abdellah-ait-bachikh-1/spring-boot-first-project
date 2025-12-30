@@ -1,4 +1,4 @@
-package com.abdellah.demo.dto;
+package com.abdellah.demo.dto.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
